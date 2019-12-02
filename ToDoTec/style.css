@@ -1,15 +1,15 @@
 .quadro{
     width: 150px;
-    height: 200px;
+    heght: 200px;
     background-color: grey;
-    padding: 1.5em;
+    padding: 1.5;
     box-shadow: black 4px 5px 5px;
     display: inline-block;
     margin: 1em;
 }
 
 #titulo{
-    font: bold 14pt;
+    fonte: bold 14pt;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 

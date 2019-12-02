@@ -6,16 +6,16 @@ function iniciar(){
         editarNome();
     }
     else{
-        let nome = document.querySelector("#form_nome");
-        form_nome.style.display = "none";
+        let formulario = document.querySelector("#form");
+        formulario.style.display = "none";
         let elementoNome = document.querySelector("#titulo");
         elementoNome.innerHTML = nome_lista;
     }
-    carregarTarefas();
+    carregarTarefa();
 }
 
 function editarNome(){
-    let elementoNome = document.querySelector("#titulo");
+    let elementoNome = document.querySelector("#h1");
     let form_nome = document.querySelector("#form_nome");
     let nome = document.querySelector("#nome");
     nome.value = elementoNome.innerHTML;
@@ -25,7 +25,7 @@ function editarNome(){
 
 function gravarNome(){
     let nome = document.querySelector("#nome").value;
-    localStorage.setItem("nome_lista", nome);
+    localStorage.setItem("nome_lista", nomedalista);
     location.assign(location.href);
 }
 
@@ -67,13 +67,14 @@ function excluirTarefa(e){
 function carregarTarefas(){
     for(var i=0; i<localStorage.length;i++){
         let key = localStorage.key(i);
-        if(key.startsWith("tarefa_")){
+        if(key.startsWith("Tarefa_")){
             let t = JSON.parse(localStorage.getItem(key));
             adicionarTarefaDOM(t);
         }
     }
 }
 
+//tratamento dos eventos
 let elementoNome = document.querySelector("#nome");
 elementoNome.addEventListener("change", gravarNome);
 
